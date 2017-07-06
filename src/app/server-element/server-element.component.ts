@@ -17,10 +17,7 @@ import { Component,
   styleUrls: ['./server-element.component.css'],
   encapsulation: ViewEncapsulation.Emulated
 })
-export class ServerElementComponent implements OnInit,
- OnChanges, 
- DoCheck,
- AfterContentInit {
+export class ServerElementComponent implements OnInit {
   @Input('srvElement') element:{type: string, name: string, content: string};
   @Input() name: string;
   @ViewChild('heading') header: ElementRef;
@@ -31,30 +28,10 @@ export class ServerElementComponent implements OnInit,
     console.log('constructor called!');
   }
 
-  ngOnChanges(changes: SimpleChanges){
-    console.log('ngOnChanges called!');
-    console.log(changes);
-  }
+ 
 
   ngOnInit() {
-    console.log('ngOnInit called!');
-    console.log('Text Content of Paragraph: ' + this.paragraph.nativeElement.textContent);
-  }
-
-   ngDoCheck() {
-    console.log('ngDoCheck called!');
     
-  }
-
- ngAfterContentInit() {
-    console.log('ngAfterContentInit called!');
-    console.log('Text Content of Paragraph: ' + this.paragraph.nativeElement.textContent);
-  }
-
-
-  ngAfterViewInit() {
-    console.log('ngAfterViewInit called!');
-    console.log('Text Content: ' + this.header.nativeElement.textContent);
   }
 
 
