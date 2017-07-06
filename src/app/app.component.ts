@@ -24,5 +24,8 @@ onServerAdded(serverData: {serverName: string, serverContent: string}) {
     });
  }
 
+ onChangeFirst(){
+   this.serverElements[0].name = 'Changed!';
+ }
   
 }
